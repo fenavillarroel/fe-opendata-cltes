@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom"; // Importa useNavigate
 export default function Login({ onLogin }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  const [loginErr, setLogin] = useState(false);
+
   const navigate = useNavigate(); // Obtén la función de navegación
 
   const handleLogin = async (e) => {
@@ -72,6 +75,7 @@ export default function Login({ onLogin }) {
               Submit
             </button>
           </div>
+          {loginErr && <p style={{ color: 'red' }}>Credenciales erroneas</p>}
           {/* <p className="forgot-password text-right mt-2">
             Forgot <a href="#">password?</a>
           </p> */}

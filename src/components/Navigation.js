@@ -1,6 +1,6 @@
 import React from "react";
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
-import { NavLink, Link } from "react-router-dom";
+import { Navbar, Container, Nav } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 /* export default function Navbar() {
     return (
@@ -18,14 +18,14 @@ import { NavLink, Link } from "react-router-dom";
 } */
 
 
-export default function Navigation({token}) {
+export default function Navigation({isLoggedIn}) {
     return (
         <Container>
             <Navbar bg="light" expand="lg">
                 <Container>
                     <Navbar.Brand as={Link} to="/" >OpenData</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    {token?
+                    {isLoggedIn?
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
                             <Nav.Link as={Link} to="/dashboard" >Dashboard</Nav.Link>
